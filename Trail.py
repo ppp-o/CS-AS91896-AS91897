@@ -36,9 +36,30 @@ def print_Julies_party_hire_details():
             column=4, row=name_count+8)
         name_count += 1
 
+#createing buttons and labels for the gui
+def setup_buttons():
+    global Julies_party_hire_details, entry_Customer_full_name,entry_Item_hired,entry_recipt_number,entry_weather, total_entries, delete_item
+    Button(main_window, text="Quit",command=quit) .grid(column=1, row=0)
+    Button(main_window, text="Append Details",command=append_name) .grid(column=0,row=1)
+    Button(main_window, text="Print Details",command=print_Julies_party_hire_details) .grid(column=1,row=1)
+    Label(main_window, text="Customer full name") .grid(column=0,row=2)
+    entry_Customer_full_name = Entry(main_window)
+    entry_Customer_full_name.grid(column=1,row=2)
+    Label(main_window, text="Item hired") .grid(column=0,row=3)
+    entry_Item_hired = Entry(main_window)
+    entry_Item_hired.grid(column=1,row=3)
+    Label(main_window, text="Recipt number") .grid(column=0,row=4)
+    entry_campers = Entry(main_window)
+    entry_campers.grid(column=1,row=4)
+    Label(main_window, text="Number of items") .grid(column=0,row=5)
+    entry_Number_of_items = Entry(main_window)
+    entry_Number_of_items.grid(column=1,row=5)
+    Label(main_window, text="Row #") .grid(column=0,row=6)
+    delete_item = Entry(main_window)
+    delete_item .grid(column=1,row=6)
+    Button(main_window, text="Delete",command=delete_row) .grid(column=2,row=6)
 
 
-main()
 
 
 
