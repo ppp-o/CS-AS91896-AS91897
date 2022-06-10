@@ -1,6 +1,8 @@
 
 from tkinter import *
 
-#quit subroutine
+#quit function 
 def quit():
     main_window.destroy()
+
+
