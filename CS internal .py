@@ -71,3 +71,17 @@ def setup_buttons():
     delete_item = Entry(main_window)
     delete_item .grid(column=1,row=6)
     Button(main_window, text="Delete row",command=delete_row) .grid(column=2,row=6)
+
+#start the program running
+def main():
+    global main_window
+    global store_details, entry_name,entry_age,entry_gender, total_entries
+    store_details = []
+    total_entries = 0
+    main_window =Tk()
+    main_window.title("Julie's Party Hire")
+    setup_buttons()
+    main_window.mainloop()
+    
+main()
+
