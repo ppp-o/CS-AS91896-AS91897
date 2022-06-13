@@ -48,3 +48,26 @@ def delete_row ():
     Label(main_window, text="       ").grid(column=3,row=item_count+7)
     Label(main_window, text="       ").grid(column=4,row=item_count+7)
     print_store_details()
+
+#createing the buttons and labels
+def setup_buttons():
+    global store_details, entry_customer_name,entry_receipt_number,entry_item_number,entry_item_hired, total_entries, delete_item
+    Button(main_window, text="Quit",command=quit) .grid(column=1, row=0)
+    Button(main_window, text="Append Details",command=append_details) .grid(column=0,row=1)
+    Button(main_window, text="Print Details",command=print_store_details) .grid(column=1,row=1)
+    Label(main_window, text="Customer Full Name") .grid(column=0,row=2)
+    entry_customer_name = Entry(main_window)
+    entry_customer_name.grid(column=1,row=2)
+    Label(main_window, text="Receipt Number") .grid(column=0,row=3)
+    entry_receipt_number = Entry(main_window)
+    entry_receipt_number.grid(column=1,row=3)
+    Label(main_window, text="Item Hired") .grid(column=0,row=4)
+    entry_item_number = Entry(main_window)
+    entry_item_number.grid(column=1,row=4)
+    Label(main_window, text="Number of Item Hired") .grid(column=0,row=5)
+    entry_item_hired = Entry(main_window)
+    entry_item_hired.grid(column=1,row=5)
+    Label(main_window, text="Row #") .grid(column=0,row=6)
+    delete_item = Entry(main_window)
+    delete_item .grid(column=1,row=6)
+    Button(main_window, text="Delete row",command=delete_row) .grid(column=2,row=6)
