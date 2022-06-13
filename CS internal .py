@@ -24,3 +24,13 @@ def print_store_details ():
         Label(main_window, text=(store_details[item_count][3])).grid(column=4,row=item_count+8)
         item_count +=  1
 
+#add the print_store_details to the list
+def append_details ():
+    global store_details, entry_customer_name,entry_receipt_number,entry_item_number,entry_item_hired, total_entries
+    if len(entry_customer_name.get()) != 0 :
+        store_details.append([entry_customer_name.get(),entry_receipt_number.get(),entry_item_number.get(),entry_item_hired.get()])
+        entry_customer_name.delete(0,'end')
+        entry_receipt_number.delete(0,'end')
+        entry_item_number.delete(0,'end')
+        entry_item_hired.delete(0,'end')
+        total_entries +=  1
