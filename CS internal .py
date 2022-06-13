@@ -34,3 +34,17 @@ def append_details ():
         entry_item_number.delete(0,'end')
         entry_item_hired.delete(0,'end')
         total_entries +=  1
+
+
+#deleteing a row from the list
+def delete_row ():
+    global store_details, delete_item, total_entries, item_count
+    del store_details[int(delete_item.get())]
+    total_entries = total_entries - 1
+    delete_item.delete(0,'end')
+    Label(main_window, text="       ").grid(column=0,row=item_count+7) 
+    Label(main_window, text="       ").grid(column=1,row=item_count+7)
+    Label(main_window, text="       ").grid(column=2,row=item_count+7)
+    Label(main_window, text="       ").grid(column=3,row=item_count+7)
+    Label(main_window, text="       ").grid(column=4,row=item_count+7)
+    print_store_details()
