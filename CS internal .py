@@ -24,9 +24,9 @@ def print_store_details ():
         Label(main_window, text=(store_details[item_count][3])).grid(column=4,row=item_count+8)
         item_count +=  1
 
-def check_inputs():
+# def check_inputs():
 
-    
+
 #add the print_store_details to the list
 def append_details ():
     global store_details, entry_customer_name,entry_receipt_number,entry_item_number,entry_item_hired, total_entries
