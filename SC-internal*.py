@@ -22,6 +22,40 @@ def print_store_details ():
         Label(main_window, text=(store_details[item_count][3])).grid(column=4,row=item_count+8)
         item_count +=  1
 
+
+def check_inputs():
+    # these are the global variables that are used
+    global print_store_details, entry_Customers_Full_Name, entry_Receipt_Number, entry_Item_Hired, entry_Number_of_Items_Hired, total_entries
+    input_check = 0
+    Label(main_window, text="               ") .grid(column=2, row=0)
+    Label(main_window, text="               ") .grid(column=2, row=1)
+    Label(main_window, text="               ") .grid(column=2, row=2)
+    Label(main_window, text="               ") .grid(column=2, row=3)
+    # Check that Customers_Full_Name is not blank, set error text if blank
+    if len(entry_Customers_Full_Name.get()) == 0:
+        Label(main_window, fg="red", text="Required") .grid(column=2, row=0)
+        input_check = 1
+    # Check that Item Hired is not blank, set error text if blank
+    if len(entry_Item_Hired.get()) == 0:
+        Label(main_window, fg="red", text="Required") .grid(column=2, row=3)
+        input_check = 1
+    # Check the number of campers is not blank and between 1 and 500, set error text if blank
+    if (entry_Number_of_Items_Hired.get().isdigit()):
+        if int(entry_Number_of_Item_Hired.get()) < 1 or int(entry_Number_of_Item_Hired.get()) > 500:
+            Label(main_window, fg="red", text="1-500 only") .grid(column=2, row=2)
+            input_check = 1
+    else:
+        Label(main_window, fg="red", text="1-500 only") .grid(column=2, row=2)
+        input_check = 1
+    # Check that Receipt Number is not blank, set error text if blank
+    if len(entry_Receipt_Number.get()) == 0:
+        Label(main_window, fg="red", text="Required/Number only") .grid(column=2, row=3)
+        input_check = 1
+    if input_check == 0:
+        append_name()
+
+
+
 #add the print_store_details to the list
 def append_details ():
     global store_details, entry_customer_name,entry_receipt_number,entry_item_number,entry_item_hired, total_entries
@@ -83,5 +117,3 @@ def main():
     main_window.mainloop()
     
 main()
-
-
