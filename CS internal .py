@@ -27,17 +27,17 @@ def check_inputs():
     # these are the global variables that are used
     global store_details, entry_customer_name, entry_receipt_number, entry_item_hired, entry_item_number, total_entries
     input_check = 0
-    Label(main_window, text="               ") .grid(column=2, row=2)
-    Label(main_window, text="               ") .grid(column=2, row=3)
-    Label(main_window, text="               ") .grid(column=2, row=4)
-    Label(main_window, text="                     ") .grid(column=2, row=5)
+    Label(main_window, text="                                   ") .grid(column=2, row=2)
+    Label(main_window, text="                                   ") .grid(column=2, row=3)
+    Label(main_window, text="                                   ") .grid(column=2, row=4)
+    Label(main_window, text="                                   ") .grid(column=2, row=5)
     # Check that Customers_Full_Name is not blank, set error text if blank
     if len(entry_customer_name.get()) == 0:
-        Label(main_window, fg="red", text="Required") .grid(column=2, row=2)
+        Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=2)
         input_check = 1
     # Check that Item_Hired is not blank, set error text if blank
     if len(entry_item_hired.get()) == 0:
-        Label(main_window, fg="red", text="Required") .grid(column=2, row=4)
+        Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=4)
         input_check = 1
     if len(entry_item_number.get()) == 0:
         Label(main_window, fg="red", text="Required") .grid(column=2, row=5)
@@ -50,11 +50,11 @@ def check_inputs():
         else:
             pass
     else:
-        Label(main_window, fg="red", text="Required") .grid(column=2, row=5)
+        Label(main_window, fg="red", text="Required/1-500") .grid(column=2, row=5)
         input_check = 1
     # Check that Receipt Number is not blank, set error text if blank
     if len(entry_receipt_number.get()) == 0:
-        Label(main_window, fg="red", text="Required") .grid(column=2, row=3)
+        Label(main_window, fg="red", text="Required/number only") .grid(column=2, row=3)
         input_check = 1
     if input_check == 0:
         append_details()
@@ -120,6 +120,10 @@ def main():
     main_window.mainloop()
     
 main()
+
+
+
+
 
 
 
