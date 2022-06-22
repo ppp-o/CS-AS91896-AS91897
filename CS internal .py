@@ -26,11 +26,11 @@ def print_store_details ():
 def check_inputs():
     # these are the global variables that are used
     global store_details, entry_customer_name, entry_receipt_number, entry_item_hired, entry_item_number, total_entries
-    input_check = 0
-    Label(main_window, text="                                   ") .grid(column=2, row=2)
-    Label(main_window, text="                                   ") .grid(column=2, row=3)
-    Label(main_window, text="                                   ") .grid(column=2, row=4)
-    Label(main_window, text="                                   ") .grid(column=2, row=5)
+    input_check = 0.
+    Label(main_window, text="                                      ") .grid(column=2, row=2)
+    Label(main_window, text="                                      ") .grid(column=2, row=3)
+    Label(main_window, text="                                      ") .grid(column=2, row=4)
+    Label(main_window, text="                                      ") .grid(column=2, row=5)
     # Check that Customers_Full_Name is not blank, set error text if blank
     if len(entry_customer_name.get()) == 0:
         Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=2)
@@ -75,12 +75,12 @@ def delete_row ():
     global store_details, delete_item, total_entries, item_count
     del store_details[int(delete_item.get())]
     total_entries = total_entries - 1
-    delete_item.delete(0,'end')
-    Label(main_window, text="       ").grid(column=0,row=item_count+7) 
-    Label(main_window, text="       ").grid(column=1,row=item_count+7)
-    Label(main_window, text="       ").grid(column=2,row=item_count+7)
-    Label(main_window, text="       ").grid(column=3,row=item_count+7)
-    Label(main_window, text="       ").grid(column=4,row=item_count+7)
+    delete_item.delete(0,'end')  
+    Label(main_window, text="                                          ").grid(column=0,row=item_count+7) 
+    Label(main_window, text="                                          ").grid(column=1,row=item_count+7)
+    Label(main_window, text="                                          ").grid(column=2,row=item_count+7)
+    Label(main_window, text="                                          ").grid(column=3,row=item_count+7)
+    Label(main_window, text="                                          ").grid(column=4,row=item_count+7)
     print_store_details()
 
 #createing the buttons and labels
