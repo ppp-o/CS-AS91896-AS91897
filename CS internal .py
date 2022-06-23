@@ -35,10 +35,23 @@ def check_inputs():
     if len(entry_customer_name.get()) == 0:
         Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=2)
         input_check = 1
+    if (entry_customer_name.get().isdigit()):
+        if int(entry_customer_name.get()) >= 0:
+            Label(main_window, fg="red", text="letters only") .grid(column=2, row=2)
+            input_check = 1 
+        else: 
+            pass
     # Check that Item_Hired is not blank, set error text if blank
     if len(entry_item_hired.get()) == 0:
-        Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=4)
+        Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=2)
         input_check = 1
+    if (entry_item_hired.get().isdigit()):
+        if int(entry_item_hired.get()) >= 0:
+            Label(main_window, fg="red", text="letters only") .grid(column=2, row=4) 
+            input_check = 1 
+        else: 
+            pass
+    # Check the Number_of_Items_Hired is not blank
     if len(entry_item_number.get()) == 0:
         Label(main_window, fg="red", text="Required") .grid(column=2, row=5)
         input_check = 1
