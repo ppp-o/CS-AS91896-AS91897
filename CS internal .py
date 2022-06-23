@@ -4,7 +4,7 @@ from tkinter import messagebox
 def quit():
     main_window.destroy()
 
-#print details of the store
+#print details of the store. 
 def print_store_details ():
     global total_entries, item_count
     item_count = 0
