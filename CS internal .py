@@ -72,7 +72,7 @@ def check_inputs():
     if entry_receipt_number.get().isdigit():
         pass
     else:
-        Label(main_window, fg="red", text="Required/number only") .grid(column=2, row=3)
+        Label(main_window, fg="red", text="number only") .grid(column=2, row=3)
         input_check = 1
 
     if input_check == 0:
