@@ -73,6 +73,7 @@ def check_inputs():
         pass
     else:
         Label(main_window, fg="red", text="Required/number only") .grid(column=2, row=3)
+        input_check = 1
 
     if input_check == 0:
         append_details()
