@@ -43,7 +43,7 @@ def check_inputs():
             pass
     # Check that Item_Hired is not blank, set error text if blank
     if len(entry_item_hired.get()) == 0:
-        Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=2)
+        Label(main_window, fg="red", text="Required/letters only") .grid(column=2, row=4)
         input_check = 1
     if (entry_item_hired.get().isdigit()):
         if int(entry_item_hired.get()) >= 0:
@@ -69,6 +69,11 @@ def check_inputs():
     if len(entry_receipt_number.get()) == 0:
         Label(main_window, fg="red", text="Required/number only") .grid(column=2, row=3)
         input_check = 1
+    if entry_receipt_number.get().isdigit():
+        pass
+    else:
+        Label(main_window, fg="red", text="Required/number only") .grid(column=2, row=3)
+
     if input_check == 0:
         append_details()
 
